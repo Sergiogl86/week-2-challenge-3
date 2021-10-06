@@ -1,6 +1,6 @@
 // Declaramos el objeto carton de bingo
 
-const Carton_Bingo = {
+const cartonBingo = {
   Lineas: {
     "Linea 1": ["#", "#", "22", "#", "#", "#", "#", "#", "85"],
     "Linea 2": ["8", "#", "#", "#", "43", "#", "#", "#", "#"],
@@ -24,23 +24,24 @@ const Carton_Bingo = {
     Puntos: 100,
   },
   Jugar_Partida() {
+    let continuar;
     do {
-      Nombre_del_jugador = prompt("¡Hola!, Introduzca su nombre");
+      let nombreDelJugador = prompt("¡Hola!, Introduzca su nombre");
       do {
-        if (!isNaN(Nombre_del_jugador)) {
-          Nombre_del_jugador = prompt(
+        if (!nombreDelJugador.isNaN()) {
+          nombreDelJugador = prompt(
             "Nombre incorrecto, vuelva a introducir. ¡Gracias!"
           );
         } else {
-          alert(`Bienvenido al Bingo SkylabCoders, ${Nombre_del_jugador}.`);
+          alert(`Bienvenido al Bingo SkylabCoders, ${nombreDelJugador}.`);
 
-          Carton_Bingo.Mostrar_Puntos();
+          cartonBingo.Mostrar_Puntos();
         }
-      } while (!isNaN(Nombre_del_jugador));
+      } while (!nombreDelJugador.isNaN());
       // Pedimos el nombre.
       do {
-        Carton_Bingo.Generar_carton();
-        carton = prompt(
+        cartonBingo.Generar_carton();
+        let carton = prompt(
           "¿Quiere jugar con el Carton de juego generado?",
           "Yes or No"
         );
@@ -50,23 +51,23 @@ const Carton_Bingo = {
         } else {
           continuar = true;
         }
-      } while (carton.toLowerCase() == "no");
+      } while (carton.toLowerCase() === "no");
       // Generamos un Carton.
 
       if (continuar) {
         alert("¡Empezamos la partida!");
         do {
-          Carton_Bingo.Generar_tirada();
-          if (Carton_Bingo.Estado.Linea == false) {
-            Carton_Bingo.Comprobar_Linea();
+          cartonBingo.Generar_tirada();
+          if (cartonBingo.Estado.Linea === false) {
+            cartonBingo.Comprobar_Linea();
           }
-          Carton_Bingo.Comprobar_Bingo();
-          if (Carton_Bingo.Estado.Bingo) {
+          cartonBingo.Comprobar_Bingo();
+          if (cartonBingo.Estado.Bingo) {
             alert("¡Enhorabuena, es nuestro nuevo ganador!");
-            puntos = 100 - Carton_Bingo.Parida.Bombo.length;
-            Carton_Bingo.Añadir_Puntos(Nombre_del_jugador, puntos);
+            puntos = 100 - cartonBingo.Parida.Bombo.length;
+            cartonBingo.Añadir_Puntos(nombreDelJugador, puntos);
             // alert ('¡Cosulta en consola el Hall of Fame!');
-            Carton_Bingo.Mostrar_Puntos();
+            cartonBingo.Mostrar_Puntos();
             continuar = false;
           } else {
             continuar = confirm("Desea continuar?");
@@ -83,23 +84,20 @@ const Carton_Bingo = {
   Mostrar_Puntos() {
     alert(`Consulta en la consola el Hall of Fame.`);
     console.log("/*/*/*/*/*/*/ Hall of Fame /*/*/*/*/*/*/*/*/*/*/");
-    console.table(Carton_Bingo.Score.sort((a, b) => b.puntos - a.puntos));
+    console.table(cartonBingo.Score.sort((a, b) => b.puntos - a.puntos));
     console.log("/*/*/*/*/*/*/ Hall of Fame /*/*/*/*/*/*/*/*/*/*/");
   },
   Añadir_Puntos(name, score) {
-    Carton_Bingo.Score.push({ name, puntos: score });
+    cartonBingo.Score.push({ name, puntos: score });
   },
 
   Generar_carton() {
-    Carton_Bingo.Estado.Bingo = false;
-    Carton_Bingo.Estado.Linea = false;
-    Linea1_5 = 0;
-    Linea2_5 = 0;
-    Linea2_5 = 0;
-    Carton_Bingo.Parida.Bombo = [];
-    for (const Line in Carton_Bingo.Lineas) {
-      for (const numero in Carton_Bingo.Lineas[Line]) {
-        Carton_Bingo.Lineas[Line][numero] = "#";
+    cartonBingo.Estado.Bingo = false;
+    cartonBingo.Estado.Linea = false;
+    cartonBingo.Parida.Bombo = [];
+    for (const Line in cartonBingo.Lineas) {
+      for (const numero in cartonBingo.Lineas[Line]) {
+        cartonBingo.Lineas[Line][numero] = "#";
       }
     }
     // console.table(Carton_Bingo.Lineas)
@@ -110,171 +108,171 @@ const Carton_Bingo = {
         // no hago nada
       } else if (numero < 10) {
         rellenar = true;
-        for (const Line in Carton_Bingo.Lineas) {
+        for (const Line in cartonBingo.Lineas) {
           Max_Num_Line = 0;
-          for (const numero in Carton_Bingo.Lineas[Line]) {
-            if (!isNaN(Carton_Bingo.Lineas[Line][numero])) {
+          for (const numero in cartonBingo.Lineas[Line]) {
+            if (!cartonBingo.Lineas[Line][numero].isNaN()) {
               Max_Num_Line += 1;
             }
           }
           if (
-            isNaN(Carton_Bingo.Lineas[Line][0]) &&
+            cartonBingo.Lineas[Line][0].isNaN() &&
             rellenar &&
             Max_Num_Line < 5
           ) {
-            Carton_Bingo.Lineas[Line][0] = numero;
+            cartonBingo.Lineas[Line][0] = numero;
             vector_numeros.push(numero);
             rellenar = false;
           }
         }
       } else if (numero >= 10 && numero < 20) {
         rellenar = true;
-        for (const Line in Carton_Bingo.Lineas) {
+        for (const Line in cartonBingo.Lineas) {
           Max_Num_Line = 0;
-          for (const numero in Carton_Bingo.Lineas[Line]) {
-            if (!isNaN(Carton_Bingo.Lineas[Line][numero])) {
+          for (const numero in cartonBingo.Lineas[Line]) {
+            if (!cartonBingo.Lineas[Line][numero].isNaN()) {
               Max_Num_Line += 1;
             }
           }
           if (
-            isNaN(Carton_Bingo.Lineas[Line][1]) &&
+            cartonBingo.Lineas[Line][1].isNaN() &&
             rellenar &&
             Max_Num_Line < 5
           ) {
-            Carton_Bingo.Lineas[Line][1] = numero;
+            cartonBingo.Lineas[Line][1] = numero;
             vector_numeros.push(numero);
             rellenar = false;
           }
         }
       } else if (numero >= 20 && numero < 30) {
         rellenar = true;
-        for (const Line in Carton_Bingo.Lineas) {
+        for (const Line in cartonBingo.Lineas) {
           Max_Num_Line = 0;
-          for (const numero in Carton_Bingo.Lineas[Line]) {
-            if (!isNaN(Carton_Bingo.Lineas[Line][numero])) {
+          for (const numero in cartonBingo.Lineas[Line]) {
+            if (!cartonBingo.Lineas[Line][numero].isNaN()) {
               Max_Num_Line += 1;
             }
           }
           if (
-            isNaN(Carton_Bingo.Lineas[Line][2]) &&
+            cartonBingo.Lineas[Line][2].isNaN() &&
             rellenar &&
             Max_Num_Line < 5
           ) {
-            Carton_Bingo.Lineas[Line][2] = numero;
+            cartonBingo.Lineas[Line][2] = numero;
             vector_numeros.push(numero);
             rellenar = false;
           }
         }
       } else if (numero >= 30 && numero < 40) {
         rellenar = true;
-        for (const Line in Carton_Bingo.Lineas) {
+        for (const Line in cartonBingo.Lineas) {
           Max_Num_Line = 0;
-          for (const numero in Carton_Bingo.Lineas[Line]) {
-            if (!isNaN(Carton_Bingo.Lineas[Line][numero])) {
+          for (const numero in cartonBingo.Lineas[Line]) {
+            if (!cartonBingo.Lineas[Line][numero].isNaN()) {
               Max_Num_Line += 1;
             }
           }
           if (
-            isNaN(Carton_Bingo.Lineas[Line][3]) &&
+            cartonBingo.Lineas[Line][3].isNaN() &&
             rellenar &&
             Max_Num_Line < 5
           ) {
-            Carton_Bingo.Lineas[Line][3] = numero;
+            cartonBingo.Lineas[Line][3] = numero;
             vector_numeros.push(numero);
             rellenar = false;
           }
         }
       } else if (numero >= 40 && numero < 50) {
         rellenar = true;
-        for (const Line in Carton_Bingo.Lineas) {
+        for (const Line in cartonBingo.Lineas) {
           Max_Num_Line = 0;
-          for (const numero in Carton_Bingo.Lineas[Line]) {
-            if (!isNaN(Carton_Bingo.Lineas[Line][numero])) {
+          for (const numero in cartonBingo.Lineas[Line]) {
+            if (!cartonBingo.Lineas[Line][numero].isNaN()) {
               Max_Num_Line += 1;
             }
           }
           if (
-            isNaN(Carton_Bingo.Lineas[Line][4]) &&
+            cartonBingo.Lineas[Line][4].isNaN() &&
             rellenar &&
             Max_Num_Line < 5
           ) {
-            Carton_Bingo.Lineas[Line][4] = numero;
+            cartonBingo.Lineas[Line][4] = numero;
             vector_numeros.push(numero);
             rellenar = false;
           }
         }
       } else if (numero >= 50 && numero < 60) {
         rellenar = true;
-        for (const Line in Carton_Bingo.Lineas) {
+        for (const Line in cartonBingo.Lineas) {
           Max_Num_Line = 0;
-          for (const numero in Carton_Bingo.Lineas[Line]) {
-            if (!isNaN(Carton_Bingo.Lineas[Line][numero])) {
+          for (const numero in cartonBingo.Lineas[Line]) {
+            if (!isNaN(cartonBingo.Lineas[Line][numero])) {
               Max_Num_Line += 1;
             }
           }
           if (
-            isNaN(Carton_Bingo.Lineas[Line][5]) &&
+            isNaN(cartonBingo.Lineas[Line][5]) &&
             rellenar &&
             Max_Num_Line < 5
           ) {
-            Carton_Bingo.Lineas[Line][5] = numero;
+            cartonBingo.Lineas[Line][5] = numero;
             vector_numeros.push(numero);
             rellenar = false;
           }
         }
       } else if (numero >= 60 && numero < 70) {
         rellenar = true;
-        for (const Line in Carton_Bingo.Lineas) {
+        for (const Line in cartonBingo.Lineas) {
           Max_Num_Line = 0;
-          for (const numero in Carton_Bingo.Lineas[Line]) {
-            if (!isNaN(Carton_Bingo.Lineas[Line][numero])) {
+          for (const numero in cartonBingo.Lineas[Line]) {
+            if (!isNaN(cartonBingo.Lineas[Line][numero])) {
               Max_Num_Line += 1;
             }
           }
           if (
-            isNaN(Carton_Bingo.Lineas[Line][6]) &&
+            isNaN(cartonBingo.Lineas[Line][6]) &&
             rellenar &&
             Max_Num_Line < 5
           ) {
-            Carton_Bingo.Lineas[Line][6] = numero;
+            cartonBingo.Lineas[Line][6] = numero;
             vector_numeros.push(numero);
             rellenar = false;
           }
         }
       } else if (numero >= 70 && numero < 80) {
         rellenar = true;
-        for (const Line in Carton_Bingo.Lineas) {
+        for (const Line in cartonBingo.Lineas) {
           Max_Num_Line = 0;
-          for (const numero in Carton_Bingo.Lineas[Line]) {
-            if (!isNaN(Carton_Bingo.Lineas[Line][numero])) {
+          for (const numero in cartonBingo.Lineas[Line]) {
+            if (!isNaN(cartonBingo.Lineas[Line][numero])) {
               Max_Num_Line += 1;
             }
           }
           if (
-            isNaN(Carton_Bingo.Lineas[Line][7]) &&
+            isNaN(cartonBingo.Lineas[Line][7]) &&
             rellenar &&
             Max_Num_Line < 5
           ) {
-            Carton_Bingo.Lineas[Line][7] = numero;
+            cartonBingo.Lineas[Line][7] = numero;
             vector_numeros.push(numero);
             rellenar = false;
           }
         }
       } else if (numero >= 80 && numero < 90) {
         rellenar = true;
-        for (const Line in Carton_Bingo.Lineas) {
+        for (const Line in cartonBingo.Lineas) {
           Max_Num_Line = 0;
-          for (const numero in Carton_Bingo.Lineas[Line]) {
-            if (!isNaN(Carton_Bingo.Lineas[Line][numero])) {
+          for (const numero in cartonBingo.Lineas[Line]) {
+            if (!isNaN(cartonBingo.Lineas[Line][numero])) {
               Max_Num_Line += 1;
             }
           }
           if (
-            isNaN(Carton_Bingo.Lineas[Line][8]) &&
+            isNaN(cartonBingo.Lineas[Line][8]) &&
             rellenar &&
             Max_Num_Line < 5
           ) {
-            Carton_Bingo.Lineas[Line][8] = numero;
+            cartonBingo.Lineas[Line][8] = numero;
             vector_numeros.push(numero);
             rellenar = false;
           }
@@ -282,7 +280,7 @@ const Carton_Bingo = {
       }
     } while (vector_numeros.length < 15);
 
-    console.table(Carton_Bingo.Lineas);
+    console.table(cartonBingo.Lineas);
     console.log("/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/");
   },
   Generar_tirada() {
@@ -293,46 +291,46 @@ const Carton_Bingo = {
     encontrado = false;
     repetido = false;
     do {
-      if (Carton_Bingo.Parida.Bombo.includes(tirada)) {
+      if (cartonBingo.Parida.Bombo.includes(tirada)) {
         repetido = true;
         tirada = Math.floor(Math.random() * 90 + 1);
       } else {
-        Carton_Bingo.Parida.Bombo.push(tirada);
+        cartonBingo.Parida.Bombo.push(tirada);
         repetido = false;
       }
 
       console.log(
-        `Los numero salidos hasta el momento son: ${Carton_Bingo.Parida.Bombo}`
+        `Los numero salidos hasta el momento son: ${cartonBingo.Parida.Bombo}`
       );
     } while (repetido);
 
-    for (const Line in Carton_Bingo.Lineas) {
-      for (const numero in Carton_Bingo.Lineas[Line]) {
-        if (Carton_Bingo.Lineas[Line][numero] == tirada) {
+    for (const Line in cartonBingo.Lineas) {
+      for (const numero in cartonBingo.Lineas[Line]) {
+        if (cartonBingo.Lineas[Line][numero] == tirada) {
           encontrado = true;
-          Carton_Bingo.Lineas[Line][numero] = "X";
+          cartonBingo.Lineas[Line][numero] = "X";
         }
       }
     }
     if (encontrado) {
       console.log(`¡Enhorabuena!, se ha encontrado el valor ${tirada}`);
-      console.table(Carton_Bingo.Lineas);
+      console.table(cartonBingo.Lineas);
     } else {
       console.log(`¡Vamos!, atentos al siguiente numero`);
-      console.table(Carton_Bingo.Lineas);
+      console.table(cartonBingo.Lineas);
     }
     return tirada;
   },
   Comprobar_Linea() {
-    for (const Line in Carton_Bingo.Lineas) {
+    for (const Line in cartonBingo.Lineas) {
       Linea = 0;
-      for (const numero in Carton_Bingo.Lineas[Line]) {
-        if (Carton_Bingo.Lineas[Line][numero] == "X") {
+      for (const numero in cartonBingo.Lineas[Line]) {
+        if (cartonBingo.Lineas[Line][numero] == "X") {
           Linea += 1;
         }
       }
       if (Linea == 5) {
-        Carton_Bingo.Estado.Linea = true;
+        cartonBingo.Estado.Linea = true;
         alert("!Enhorabuena tiene usted linea!");
       }
     }
@@ -340,19 +338,19 @@ const Carton_Bingo = {
   Comprobar_Bingo() {
     Bingo = 0;
 
-    for (const Line in Carton_Bingo.Lineas) {
-      for (const numero in Carton_Bingo.Lineas[Line]) {
-        if (Carton_Bingo.Lineas[Line][numero] == "X") {
+    for (const Line in cartonBingo.Lineas) {
+      for (const numero in cartonBingo.Lineas[Line]) {
+        if (cartonBingo.Lineas[Line][numero] == "X") {
           Bingo += 1;
         }
       }
     }
 
     if (Bingo == 15) {
-      Carton_Bingo.Estado.Bingo = true;
+      cartonBingo.Estado.Bingo = true;
       alert("!Enhorabuena tiene usted Bingo!");
     }
   },
 };
 
-Carton_Bingo.Jugar_Partida();
+cartonBingo.Jugar_Partida();
