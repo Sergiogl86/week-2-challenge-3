@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tema7</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="./script.js"></script>
+</head>
+<body>
+
+    <Calculadora>
+
+        <Pantalla>
+
+            <p1 id = "Pan2">  </p1><br>
+            <p1 id = "ope">  </p1><br>
+            <p1 id = "Pan">  </p1><br>     
+            <p1 id = "Res">  </p1><br>                  
+
+        </Pantalla>
+
+        <Teclas>
+
+            <Numeros>
+
+                <div class="Num" onclick="Clear();" style="width: 164px;">
+                    <h1> AC </h1>
+                </div>
+
+                <div class="Num" onclick="DelNum();">
+                    <h1> Atras </h1>
+                </div>
+
+                <div class="Num" onclick="AddNum('7');">
+                    <h1> 7 </h1>
+                </div>
+
+                <div class="Num" onclick="AddNum('8');">
+                    <h1> 8 </h1>
+                </div>
+
+                <div class="Num" onclick="AddNum('9');">
+                    <h1> 9 </h1>
+                </div>
+                <div class="Num" onclick="AddNum('4');">
+                    <h1> 4 </h1>
+                </div>
+
+                <div class="Num" onclick="AddNum('5');">
+                    <h1> 5 </h1>
+                </div>
+
+                <div class="Num" onclick="AddNum('6');">
+                    <h1> 6 </h1>
+                </div>
+
+                <div class="Num" onclick="AddNum('1');">
+                    <h1> 1 </h1>
+                </div>
+
+                <div class="Num" onclick="AddNum('2');">
+                    <h1> 2 </h1>
+                </div>
+                <div class="Num" onclick="AddNum('3');">
+                    <h1> 3 </h1>
+                </div>
+
+                <div class="Num" onclick="AddNum('0');" style="width: 164px;">
+                    <h1> 0 </h1>
+                </div>
+                <div class="Num" onclick="AddNum('.');">
+                    <h1> . </h1>
+                </div>
+
+        
+
+            </Numeros>
+
+            <Operadores>
+                <div class="Operador" onclick="operaciones('÷');">
+                    <h1> ÷ </h1>
+                </div>
+
+                <div class="Operador" onclick="operaciones('x');">
+                    <h1> x </h1>
+                </div>
+
+                <div class="Operador" onclick="operaciones('-');">
+                    <h1> - </h1>
+                </div>
+
+                <div class="Operador" onclick="operaciones('+');">
+                    <h1> + </h1>
+                </div>
+
+                <div class="Operador" onclick="resultado();">
+                    <h1> = </h1>
+                </div>
+                
+
+            </Operadores>
+        
+
+        </Teclas>
+
+
+        
+
+        </Calculadora>
+
+</body>
