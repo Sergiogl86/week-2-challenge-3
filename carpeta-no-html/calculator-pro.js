@@ -41,11 +41,11 @@ function inserdata() {
     /*
     https://es.stackoverflow.com/questions/248372/como-validar-solo-numeros-en-un-prompt-en-javascript
     */
-    if (!isNaN(num1) && num1 != null && num1 != "") {
+    if (!num1.isNaN() && num1 !== null && num1 !== "") {
       alert("Numero correcto");
       num.push(num1);
       continue;
-    } else if (num1 == "fin") {
+    } else if (num1 === "fin") {
       num1 = "vacio";
       break;
     } else {
@@ -56,7 +56,7 @@ function inserdata() {
 
   console.log("Los valores introducidos son:");
 
-  for (i = 0; i < num.length; i++) {
+  for (let i = 0; i < num.length; i++) {
     console.log(num[i]);
   }
 }
@@ -94,7 +94,7 @@ function calculadora() {
         case 2:
           resultados[i] = num[0] * 1;
           for (let j = 1; j < num.length; j++) {
-            resultados[i] = resultados[i] * num[j];
+            resultados[i] *= num[j];
           }
           // Multiplicación
           console.log(`El valor de la multiplicación es ${resultados[i]}`);
@@ -102,7 +102,7 @@ function calculadora() {
         case 3:
           resultados[i] = num[0] * 1;
           for (let j = 1; j < num.length; j++) {
-            resultados[i] = resultados[i] / num[j];
+            resultados[i] /= num[j];
           }
           // División
           console.log(`El valor de la división es ${resultados[i].toFixed(2)}`);
@@ -114,8 +114,10 @@ function calculadora() {
             `Al introducir dos o más valores numericos correctos la Raiz cuadrada no se ha calculado`
           );
           break;
+        default:
+          break;
       }
-    } else if (num.length == 1) {
+    } else if (num.length === 1) {
       resultados[4] = Math.sqrt(num[0]);
       // Raiz cuadrada
       console.log(`Solo se ha introducido un valor valido.`);

@@ -35,10 +35,10 @@ while (true) {
   /*
 https://es.stackoverflow.com/questions/248372/como-validar-solo-numeros-en-un-prompt-en-javascript
 */
-  if (!isNaN(num1) && num1 != null && num1 != "") {
+  if (!num1.isNaN() && num1 !== null && num1 !== "") {
     alert("Numero correcto");
     break;
-  } else if (num1 == "fin") {
+  } else if (num1 === "fin") {
     num1 = "vacio";
     break;
   } else {
@@ -52,10 +52,10 @@ while (true) {
   /*
 https://es.stackoverflow.com/questions/248372/como-validar-solo-numeros-en-un-prompt-en-javascript
 */
-  if (!isNaN(num2) && num2 != null && num2 != "") {
+  if (!num2.isNaN() && num2 !== null && num2 !== "") {
     alert("Numero correcto");
     break;
-  } else if (num2 == "fin") {
+  } else if (num2 === "fin") {
     num2 = "vacio";
     break;
   } else {
@@ -68,7 +68,7 @@ console.log(`Los valores introducidos son ${num1} y ${num2}`);
 
 function calculadora(valor1, valor2) {
   for (let i = 0; i < resultados.length; i++) {
-    if (!isNaN(valor1) && !isNaN(valor2)) {
+    if (!valor1.isNaN() && !valor2.isNaN()) {
       switch (i) {
         case 0:
           resultados[i] = valor1 * 1 + valor2 * 1;
@@ -107,8 +107,10 @@ function calculadora(valor1, valor2) {
             `Al introducir dos valores numericos correctos la Raiz cuadrada no se ha calculado`
           );
           break;
+        default:
+          break;
       }
-    } else if (!isNaN(valor1)) {
+    } else if (!valor1.isNaN()) {
       resultados[4] = Math.sqrt(valor1);
       // Raiz cuadrada
       console.log(`Solo se ha introducido un valor valido.`);
@@ -118,7 +120,7 @@ function calculadora(valor1, valor2) {
 
       // desbordo la i para que no lo printe n veces.
       i = resultados.length;
-    } else if (!isNaN(valor2)) {
+    } else if (!valor2.isNaN()) {
       resultados[4] = Math.sqrt(valor2);
       // Raiz cuadrada
       console.log(`Solo se ha introducido un valor valido.`);
