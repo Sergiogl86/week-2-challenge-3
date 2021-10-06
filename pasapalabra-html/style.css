@@ -1,0 +1,386 @@
+*{
+margin: 0px;
+padding: 0px;
+}
+
+
+body{
+    background-color: rgb(111, 177, 252);
+    
+}
+
+.Cabecera{
+
+    background-color: rgb(56, 145, 247);
+    float: left;
+    height: 60px;
+    width: 100%;
+    padding: 15px;
+    margin: 0px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.Cabecera h1{
+      font-weight: bold;
+      
+}
+
+.Menu{
+
+    background-color: rgb(15, 109, 216);
+    float: left;
+    height: 700px;
+    width: 20%;
+    margin: 0px;
+        
+}
+
+.Menu h1, .Menu th, .Menu td{
+    position: relative;
+    left: 44px;
+    top: 20px;
+    font-weight: bold;
+    color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.Menu table {
+    width: 80%;
+    text-align: left;
+}
+  
+
+.Juego{
+    background-color: rgb(176, 207, 243);
+    float: left;
+    height: 700px;
+    width: 80%;
+    margin: 0px;
+    background-image: url(./IMG/altura\ nubes.jpg);
+    background-size: cover;
+    overflow: hidden;
+}
+
+.Letra{
+    height: 55px;
+    width: 55px;
+    border-style: solid;
+    border-color: white;
+    border-width: 3px;
+    background-image: url(./IMG/CirculoAzul.jpg);
+    background-size: cover;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: auto;
+    margin: 5px;
+    border-radius: 50%;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#A{
+    position: relative;
+    top: 14px;
+    left: 604px;
+}
+#B{
+    position: relative;
+    top: -44px;
+    left: 678px;
+}
+#C{
+    position: relative;
+    top: -84px;
+    left: 745px;
+}
+#D{
+    position: relative;
+    top: -106px;
+    left: 805px;
+}
+#E{
+    position: relative;
+    top: -115px;
+    left: 850px;
+}
+#F{
+    position: relative;
+    top: -115px;
+    left: 883px;
+}
+#G{
+    position: relative;
+    top: -109px;
+    left: 898px;
+}
+#H{
+    position: relative;
+    top: -102px;
+    left: 892px;
+}
+#I{
+    position: relative;
+    top: -100px;
+    left: 870px;
+}
+#J{
+    position: relative;
+    top: -103px;
+    left: 830px;
+}
+#L{
+    position: relative;
+    top: -120px;
+    left: 776px;
+}
+#M{
+    position: relative;
+    top: -150px;
+    left: 713px;
+}
+#N{
+    position: relative;
+    top: -197px;
+    left: 642px;
+}
+#Ñ{
+    position: relative;
+    top: -265px;
+    left: 568px;
+}
+#O{
+    position: relative;
+    top: -348px;
+    left: 496px;
+}
+#P{
+    position: relative;
+    top: -448px;
+    left: 434px;
+}
+#Q{
+    position: relative;
+    top: -564px;
+    left: 380px;
+}
+#R{
+    position: relative;
+    top: -692px;
+    left: 342px;
+}
+#S{
+    position: relative;
+    top: -828px;
+    left: 318px;
+}
+#T{
+    position: relative;
+    top: -968px;
+    left: 314px;
+}
+#U{
+    position: relative;
+    top: -1105px;
+    left: 328px;
+}
+#V{
+    position: relative;
+    top: -1238px;
+    left: 358px;
+}
+#X{
+    position: relative;
+    top: -1360px;
+    left: 405px;
+}
+#Y{
+    position: relative;
+    top: -1468px;
+    left: 465px;
+}
+#Z{
+    position: relative;
+    top: -1562px;
+    left: 532px;
+}
+#Timer{
+    position: relative;
+    background-image: url(./IMG/CirculoTimer.jpg);
+    height: 100px;
+    width: 100px;
+    top: -1350px;
+    left: 100px;
+    border-width: 10px;
+    color: black;
+   /*visibility: hidden;*/
+}
+
+#OK{
+    position: relative;
+    top: -2040px;
+    left: 200px;
+    background-image: url(./IMG/CirculoVerde.jpg);
+    background-size: cover;
+}
+
+#KO{
+    position: relative;
+    top: -2020px;
+    left: 200px;
+    background-image: url(./IMG/CirculoTimerEnd.jpg);
+    background-size: cover;
+}
+
+#Empezar{
+    position: relative;
+    height: 200px;
+    width: 200px;
+    top: -1425px;
+    left: 530px;
+    font-size: 25px;
+    background-image: url(./IMG/CirculoVerde.jpg);
+    background-size: cover;
+    
+}
+#Empezar:hover {
+    font-size: 35px;
+}
+#Definicion{
+    position: relative;
+    height: 350px;
+    width: 350px;
+    top: -1825px;
+    left: 445px;
+    font-size: 15px;
+    text-align: center;
+    background-size: cover;
+    visibility: hidden;
+    padding: 10px;
+}
+
+#respuesta{
+    position: relative;
+    height: 50px;
+    width: 300px;
+    top: -2225px;
+    left: 20px;
+    border-radius: 20%;
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    background-image: url(./IMG/CirculoTimer.jpg);
+    background-size: cover;
+    visibility: hidden;
+}
+
+#Final{
+    position: relative;
+    height: 100px;
+    width: 250px;
+    top: -2425px;
+    left: 500px;
+    border-radius: 20%;
+    font-size: 15px;
+    text-align: center;
+    background-size: cover;
+    visibility: hidden;
+    
+}
+#Nombre{
+    position: relative;
+    height: 50px;
+    width: 200px;
+    top: -2425px;
+    left: 525px;
+    border-radius: 20%;
+    font-size: 15px;
+    text-align: center;
+    background-image: url(./IMG/CirculoTimer.jpg);
+    background-size: cover;
+    visibility: hidden;
+    
+}
+#registrar{
+    position: relative;
+    height: 50px;
+    width: 100px;
+    top: -2425px;
+    left: 580px;
+    border-radius: 20%;
+    font-size: 13px;
+    text-align: center;
+    background-size: cover;
+    visibility: hidden;
+    
+}
+#registrar:hover {
+    font-size: 15px;
+    border-color: green;
+}
+
+#contestar{
+    position: relative;
+    height: 50px;
+    width: 200px;
+    top: -2225px;
+    left: 20px;
+    border-radius: 20%;
+    font-size: 20px;
+    text-align: center;
+    background-image: url(./IMG/CirculoVerde.jpg);
+    background-size: cover;
+    visibility: hidden;
+}
+#contestar:hover {
+    font-size: 25px;
+    border-color: green;
+}
+
+#PasaPalabra{
+    position: relative;
+    height: 50px;
+    width: 200px;
+    top: -2225px;
+    left: 20px;
+    border-radius: 20%;
+    font-size: 20px;
+    text-align: center;
+    background-image: url(./IMG/CirculoAzul.jpg);
+    background-size: cover;
+    visibility: hidden;
+}
+#PasaPalabra:hover {
+    font-size: 25px;
+    border-color: blue;
+}
+
+.Pie{
+    background-color: rgb(185, 185, 185);
+    float: left;
+    height: 140px;
+    width: 100%;
+    margin: 0px;
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+  
+    
+}
+
+#Logo {
+    height: 100px;
+    padding-right: 15px;
+}
+#Sergio{
+    text-align: right;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    font-size: 20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}

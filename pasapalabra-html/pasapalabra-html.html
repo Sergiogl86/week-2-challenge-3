@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TEMA 8: PASAPALABRA</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="./script.js"></script>
+</head>
+<body>
+
+    <div class="Cabecera">
+        <h1>TEMA 8: PASAPALABRA w/HTML+CSS+JS</h1>
+
+    </div>
+    <div class="Menu">
+        <h1>/*/Hall of Fame/*/</h1>
+        <br>
+          <table id ="Hall">
+                                    
+          </table>
+          <script>
+            Pasapalabra.Crear_Table();
+            Pasapalabra.Mostrar_Puntos();
+            
+            </script>
+    </div>
+    <div class="Juego">
+
+        <div class="Letra" id="A">A</div>
+        <div class="Letra" id="B">B</div>
+        <div class="Letra" id="C">C</div>
+        <div class="Letra" id="D">D</div>
+        <div class="Letra" id="E">E</div>
+        <div class="Letra" id="F">F</div>
+        <div class="Letra" id="G">G</div>
+        <div class="Letra" id="H">H</div>
+        <div class="Letra" id="I">I</div>
+        <div class="Letra" id="J">J</div>
+        <div class="Letra" id="L">L</div>
+        <div class="Letra" id="M">M</div>
+        <div class="Letra" id="N">N</div>
+        <div class="Letra" id="Ñ">Ñ</div>
+        <div class="Letra" id="O">O</div>
+        <div class="Letra" id="P">P</div>
+        <div class="Letra" id="Q">Q</div>
+        <div class="Letra" id="R">R</div>
+        <div class="Letra" id="S">S</div>
+        <div class="Letra" id="T">T</div>
+        <div class="Letra" id="U">U</div>
+        <div class="Letra" id="V">V</div>
+        <div class="Letra" id="X">X</div>
+        <div class="Letra" id="Y">Y</div>
+        <div class="Letra" id="Z">Z</div>
+        <button type="button" class="Letra" id ="Empezar" onclick="Pasapalabra.Jugar_Pasapalabra()">¡Empezar!</button>
+        <div class="Letra" id="Timer" >160</div>
+        <div class="Letra" id="Definicion"></div>
+        <input class="Letra" id="respuesta">
+        <script>
+            //https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_trigger_button_enter                 
+            let input_contestar = document.getElementById("respuesta");
+            input_contestar.addEventListener("keyup", function(event) {
+              if (event.keyCode === 13) {
+               event.preventDefault();
+               document.getElementById("contestar").click();
+              }
+            });
+            </script>
+        <button type="button" class="Letra" id="contestar" onclick="Pasapalabra.Click_Contestar()">¡Contestar!</button>
+        <button type="button" class="Letra" id="PasaPalabra" onclick="Pasapalabra.Click_Pasapalabra()">¡PasaPalabra!</button>
+        <div class="Letra" id="OK">0</div>
+        <div class="Letra" id="KO">0</div>
+        <div class="Letra" id="Final"></div>
+        <input class="Letra" id="Nombre" value='Introduce tu nombre - >'>
+        <button type="button" class="Letra" id="registrar" onclick="Pasapalabra.Añadir_Puntos()">¡Registrar!</button>
+        <script>
+            //https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_trigger_button_enter
+            let input_registrar = document.getElementById("Nombre");
+            input_registrar.addEventListener("keyup", function(event) {
+              if (event.keyCode === 13) {
+               event.preventDefault();
+               document.getElementById("registrar").click();
+              }
+            });
+            </script>
+        
+    </div>
+    <div class="Pie">
+        <div>
+            <img id='Logo' src="IMG/Logo.png">   
+            <p id='Sergio'> Sergio García López - 2021-09-precourse</p> 
+        </div>
+        
+        
+        
+    </div>
+
+</body>

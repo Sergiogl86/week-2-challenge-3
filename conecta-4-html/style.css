@@ -1,0 +1,222 @@
+.Conecta4{
+    display: flex;
+    width: 55%;
+    aspect-ratio: 10 / 8;
+    flex-direction: column;
+    border-style: solid;
+    border-color: rgb(161, 189, 250);
+    border-width: 10px;
+    min-width: 600px;
+    
+}
+
+.PanelU{
+    display: flex;
+    height: 15%;
+    background-color: rgb(161, 189, 250);
+    justify-content: center;
+    align-items: center;
+    font-size:calc(10px + 0.4vw);
+
+}
+.PanelC{
+    display: flex;
+    height: 75%;
+    flex-direction: row;
+
+}
+.PanelL{
+    display: flex;
+    width: 25%;
+    flex-direction: column;
+    padding: 2%;
+
+}
+
+.B1vs1{
+    display: flex;
+    height: 20%;
+    width: 100%;
+    margin: 2%;
+    border-radius: 20%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Boton{
+    width: 70%;
+    aspect-ratio: 120 / 60;
+    border-radius: 30%;
+    font-weight: bold;
+    font-size:calc(12px + 0.4vw);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.Boton:hover{
+    width: 80%;
+    height: 80%;
+    border-radius: 40%;
+}
+#O1vs1B{
+    background-image: url(./IMG/B1vs1.jpg);
+    background-size:cover;
+}
+
+
+.B1vsCPU{
+    display: flex;
+    height: 20%;
+    width: 100%;
+    margin: 2%;
+    border-radius: 20%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#O1vsCPUB{
+    background-image: url(./IMG/B1vsCPU.jpg);
+    background-size:cover;
+}
+.GameInf{
+    display: flex;
+    height: 60%;
+    width: 100%;
+    margin: 2%;
+    border-radius: 10%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+#Timer{
+    display: flex;
+    height: 15%;
+    aspect-ratio: 1 / 1 ;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size:calc(8px + 0.4vw);
+}
+
+#GameInfBox{
+    display: flex;
+    height: 80%;
+    width: 100%;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 20%;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    margin: 5%;
+}
+
+.PanelJ{
+    display: flex;
+    height: 70;
+    margin: 2%;
+    padding: 2%;
+    aspect-ratio: 120 / 100;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(./IMG/FondoC_V3.jpg);
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.ZonaT{
+    display: flex;
+    height: 5%;
+    width: 78%;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;   
+}
+
+.Tirada{
+    aspect-ratio: 1 / 1;
+    width: 8.7%;
+    background-color:white;
+    border-radius: 50%;
+    border-style: solid;
+    color: rgba(0, 0, 0, 0.507);
+    visibility: hidden;
+}
+
+#TC1:hover, #TC2:hover, #TC3:hover, #TC4:hover, #TC5:hover, #TC6:hover, #TC7:hover{
+    color:goldenrod;
+    margin-top: 7%;
+
+}
+
+.ZonaC{
+    display: flex;
+    height: 75%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+    padding-bottom: 0%;
+}
+
+.Tablero{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    height: 5.2%;
+    width: 78%;
+    margin-bottom: 5.22%;
+    
+    
+    
+    
+    
+}
+
+.Ficha{
+    display: flex;
+    border-style: solid;
+    color: rgba(116, 71, 5, 0.507);
+    background-color: white ;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    width: 8.7%;  
+
+}
+
+
+.PanelI{
+    display: flex;
+    height: 10%;
+    flex-direction:row-reverse;
+    align-items: center;
+    
+}
+
+.Logo{
+    height: 100%;
+    width: 30%;
+    background-image: url(./IMG/Logo.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    
+}
+
+.Name{
+    height: 100%;
+    width: 20%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size:calc(9px + 0.4vw);
+}

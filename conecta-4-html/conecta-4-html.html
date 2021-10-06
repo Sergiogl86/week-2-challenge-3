@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEMA 9: CONECTA 4</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js"></script>
+</head>
+<body>
+    <div class="Conecta4">
+        <div class="PanelU">
+            <!-- Panel superior. -->
+            <h1>TEMA 9: CONECTA 4 w/HTML+CSS+JS</h1>
+    
+        </div>
+        <div class="PanelC">
+            <!-- Panel central. -->
+            <div class="PanelL">
+                <!-- Panel Lateral. -->
+                <div class="B1vs1" id="O1vs1">
+                    <button class="Boton" id="O1vs1B" onclick="Conecta4.Jugar_Conecta4('No_CPU')">
+                        Jugar 1 Vs 1
+                    </button>
+                </div>
+                <div class="B1vsCPU" id="O1vsCPU">
+                    <button class="Boton" id="O1vsCPUB" onclick="Conecta4.Jugar_Conecta4('CPU')">
+                        Jugar 1 Vs CPU
+                    </button>
+                    
+                </div>
+                <div class="GameInf" id="GameInf">
+                    <div class="Letra" id="Timer" >Hi!</div>
+                    <div class="Letra" id="GameInfBox" >
+                    Información del juego.    
+                    </div>
+                    
+                </div>
+
+            </div>
+            <div class="PanelJ">
+                <!-- Panel de Juego. -->
+                <div class="ZonaT">
+                    <div id="TC1" class="Tirada" onclick="Conecta4.Tirar_ficha(0)">
+
+                    </div>
+                    <div id="TC2" class="Tirada" onclick="Conecta4.Tirar_ficha(1)">
+                        
+                    </div>
+                    <div id="TC3" class="Tirada" onclick="Conecta4.Tirar_ficha(2)">
+                        
+                    </div>
+                    <div id="TC4" class="Tirada" onclick="Conecta4.Tirar_ficha(3)">
+                        
+                    </div>
+                    <div id="TC5" class="Tirada" onclick="Conecta4.Tirar_ficha(4)">
+                        
+                    </div>
+                    <div id="TC6" class="Tirada" onclick="Conecta4.Tirar_ficha(5)">
+                        
+                    </div>
+                    <div id="TC7" class="Tirada" onclick="Conecta4.Tirar_ficha(6)">
+                        
+                    </div>
+            
+
+                </div>
+                <div class="ZonaC">
+                    <div class="Tablero">
+                        <div id="p00" class="Ficha">
+                            
+                        </div>
+                        <div id="p01" class="Ficha">
+                            
+                        </div>
+                        <div id="p02" class="Ficha">
+                            
+                        </div>
+                        <div id="p03" class="Ficha">
+                            
+                        </div>
+                        <div id="p04" class="Ficha">
+                            
+                        </div>
+                        <div id="p05" class="Ficha">
+                            
+                        </div>
+                        <div id="p06" class="Ficha">
+                            
+                        </div>
+                    </div>
+
+                    <div class="Tablero">
+                        <div id="p10" class="Ficha">
+                            
+                        </div>
+                        <div id="p11" class="Ficha">
+                            
+                        </div>
+                        <div id="p12" class="Ficha">
+                            
+                        </div>
+                        <div id="p13" class="Ficha">
+                            
+                        </div>
+                        <div id="p14" class="Ficha">
+                            
+                        </div>
+                        <div id="p15" class="Ficha">
+                            
+                        </div>
+                        <div id="p16" class="Ficha">
+                            
+                        </div>
+                    </div>
+
+                    <div class="Tablero">
+                        <div id="p20" class="Ficha">
+                            
+                        </div>
+                        <div id="p21" class="Ficha">
+                            
+                        </div>
+                        <div id="p22" class="Ficha">
+                            
+                        </div>
+                        <div id="p23" class="Ficha">
+                            
+                        </div>
+                        <div id="p24" class="Ficha">
+                            
+                        </div>
+                        <div id="p25" class="Ficha">
+                            
+                        </div>
+                        <div id="p26" class="Ficha">
+                            
+                        </div>
+                    </div>
+
+                    <div class="Tablero">
+                        <div id="p30" class="Ficha">
+                            
+                        </div>
+                        <div id="p31" class="Ficha">
+                            
+                        </div>
+                        <div id="p32" class="Ficha">
+                            
+                        </div>
+                        <div id="p33" class="Ficha">
+                            
+                        </div>
+                        <div id="p34" class="Ficha">
+                            
+                        </div>
+                        <div id="p35" class="Ficha">
+                            
+                        </div>
+                        <div id="p36" class="Ficha">
+                            
+                        </div>
+                    </div>
+
+                    <div class="Tablero">
+                        <div id="p40" class="Ficha">
+                            
+                        </div>
+                        <div id="p41" class="Ficha">
+                            
+                        </div>
+                        <div id="p42" class="Ficha">
+                            
+                        </div>
+                        <div id="p43" class="Ficha">
+                            
+                        </div>
+                        <div id="p44" class="Ficha">
+                            
+                        </div>
+                        <div id="p45" class="Ficha">
+                            
+                        </div>
+                        <div id="p46" class="Ficha">
+                            
+                        </div>
+                    </div>
+
+                    <div class="Tablero">    
+                        <div id="p50" class="Ficha">
+                            
+                        </div>
+                        <div id="p51" class="Ficha">
+                            
+                        </div>
+                        <div id="p52" class="Ficha">
+                            
+                        </div>
+                        <div id="p53" class="Ficha">
+                            
+                        </div>
+                        <div id="p54" class="Ficha">
+                            
+                        </div>
+                        <div id="p55" class="Ficha">
+                            
+                        </div>
+                        <div id="p56" class="Ficha">
+                            
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+            
+        </div>
+        <div class="PanelI">
+            <!-- Panel inferior -->
+            <div class="Logo">
+                
+            </div>
+            <div class="Name">
+                <p id='Sergio'> Sergio García López  2021-09-precourse</p>
+                
+            </div>
+            
+    
+        </div>
+
+    </div>
+
+    
+</body>
+</html>
