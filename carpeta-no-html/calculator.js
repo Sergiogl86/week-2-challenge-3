@@ -16,126 +16,46 @@ The result of the rest is resultRest
 
 // Declarar variables
 
-const resultados = [
-  "Suma",
-  "Resta",
-  "Multiplicacion",
-  "Division",
-  "Raiz Cuadrad",
-];
-// Vector de resultados
+function calculadora(valor1, valor2, i) {
+  const result = [
+    "Suma",
+    "Resta",
+    "Multiplicacion",
+    "Division",
+    "Raiz Cuadrad",
+  ];
 
-let num1;
-let num2;
+  switch (i) {
+    case 0:
+      result[i] = valor1 * 1 + valor2 * 1;
+      // Suma
+      return result[i];
 
-// Parametros a introducir por usuario.
+    case 1:
+      result[i] = valor1 - valor2;
+      // Resta
+      return result[i];
 
-while (true) {
-  num1 = prompt("Introduce el primer valor de la operación o fin para salir");
-  /*
-https://es.stackoverflow.com/questions/248372/como-validar-solo-numeros-en-un-prompt-en-javascript
-*/
-  if (!num1.isNaN() && num1 !== null && num1 !== "") {
-    alert("Numero correcto");
-    break;
-  } else if (num1 === "fin") {
-    num1 = "vacio";
-    break;
-  } else {
-    alert("No es numero");
-    continue;
+    case 2:
+      result[i] = valor1 * valor2;
+      // Multiplicación
+      return result[i];
+
+    case 3:
+      result[i] = valor1 / valor2;
+      // División
+      return result[i].toFixed(2);
+
+    case 4:
+      result[i] = "Sin Raiz cuadrada.";
+      // Sin raiz cuadrada
+      return "Al introducir dos valores numericos correctos la Raiz cuadrada no se ha calculado";
+
+    default:
+      break;
   }
 }
 
-while (true) {
-  num2 = prompt("Introduce el segundo valor de la operación o fin para salir");
-  /*
-https://es.stackoverflow.com/questions/248372/como-validar-solo-numeros-en-un-prompt-en-javascript
-*/
-  if (!num2.isNaN() && num2 !== null && num2 !== "") {
-    alert("Numero correcto");
-    break;
-  } else if (num2 === "fin") {
-    num2 = "vacio";
-    break;
-  } else {
-    alert("No es numero");
-    continue;
-  }
-}
+module.exports = calculadora;
 
-console.log(`Los valores introducidos son ${num1} y ${num2}`);
-
-function calculadora(valor1, valor2) {
-  for (let i = 0; i < resultados.length; i++) {
-    if (!valor1.isNaN() && !valor2.isNaN()) {
-      switch (i) {
-        case 0:
-          resultados[i] = valor1 * 1 + valor2 * 1;
-          // Suma
-          console.log(
-            `El valor de la suma de ${valor1} más ${valor2} es ${resultados[i]}`
-          );
-          break;
-        case 1:
-          resultados[i] = valor1 - valor2;
-          // Resta
-          console.log(
-            `El valor de la resta de ${valor1} menos ${valor2} es ${resultados[i]}`
-          );
-          break;
-        case 2:
-          resultados[i] = valor1 * valor2;
-          // Multiplicación
-          console.log(
-            `El valor de la multiplicación de ${valor1} por ${valor2} es ${resultados[i]}`
-          );
-          break;
-        case 3:
-          resultados[i] = valor1 / valor2;
-          // División
-          console.log(
-            `El valor de la división de ${valor1} entre ${valor2} es ${resultados[
-              i
-            ].toFixed(2)}`
-          );
-          break;
-        case 4:
-          resultados[i] = "Sin Raiz cuadrada.";
-          // Sin raiz cuadrada
-          console.log(
-            `Al introducir dos valores numericos correctos la Raiz cuadrada no se ha calculado`
-          );
-          break;
-        default:
-          break;
-      }
-    } else if (!valor1.isNaN()) {
-      resultados[4] = Math.sqrt(valor1);
-      // Raiz cuadrada
-      console.log(`Solo se ha introducido un valor valido.`);
-      console.log(
-        `El valor de la raiz cuadrada es ${resultados[4].toFixed(2)}`
-      );
-
-      // desbordo la i para que no lo printe n veces.
-      i = resultados.length;
-    } else if (!valor2.isNaN()) {
-      resultados[4] = Math.sqrt(valor2);
-      // Raiz cuadrada
-      console.log(`Solo se ha introducido un valor valido.`);
-      console.log(
-        `El valor de la raiz cuadrada es ${resultados[4].toFixed(2)}`
-      );
-
-      // desbordo la i para que no lo printe n veces.
-      i = resultados.length;
-    } else {
-      console.log(`No se han introducido numeros validos`);
-      // desbordo la i para que no lo printe n veces.
-      i = resultados.length;
-    }
-  }
-}
-
-calculadora(num1, num2);
+// calculadora(num1, num2);

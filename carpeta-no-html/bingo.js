@@ -26,18 +26,18 @@ const cartonBingo = {
   Jugar_Partida() {
     let continuar;
     do {
-      let nombreDelJugador = prompt("¡Hola!, Introduzca su nombre");
+      let Nombre_del_jugador = prompt("¡Hola!, Introduzca su nombre");
       do {
-        if (!nombreDelJugador.isNaN()) {
-          nombreDelJugador = prompt(
+        if (!Nombre_del_jugador.isNaN()) {
+          Nombre_del_jugador = prompt(
             "Nombre incorrecto, vuelva a introducir. ¡Gracias!"
           );
         } else {
-          alert(`Bienvenido al Bingo SkylabCoders, ${nombreDelJugador}.`);
+          alert(`Bienvenido al Bingo SkylabCoders, ${Nombre_del_jugador}.`);
 
           cartonBingo.Mostrar_Puntos();
         }
-      } while (!nombreDelJugador.isNaN());
+      } while (!Nombre_del_jugador.isNaN());
       // Pedimos el nombre.
       do {
         cartonBingo.Generar_carton();
@@ -65,7 +65,7 @@ const cartonBingo = {
           if (cartonBingo.Estado.Bingo) {
             alert("¡Enhorabuena, es nuestro nuevo ganador!");
             puntos = 100 - cartonBingo.Parida.Bombo.length;
-            cartonBingo.Añadir_Puntos(nombreDelJugador, puntos);
+            cartonBingo.Añadir_Puntos(Nombre_del_jugador, puntos);
             // alert ('¡Cosulta en consola el Hall of Fame!');
             cartonBingo.Mostrar_Puntos();
             continuar = false;
